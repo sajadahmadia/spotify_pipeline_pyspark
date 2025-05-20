@@ -1,11 +1,21 @@
 import requests as re
 import base64
+from dotenv import load_dotenv
+import os
+from datetime import datetime, timedelta
+import json
+
+
+load_dotenv()
+
+
+client_id = os.getenv("client_id")
+client_secret = os.getenv("client_secret")
 
 token_url = "https://accounts.spotify.com/api/token"
 endpoint = "albums"
 id = "4aawyAB9vmqN3uQ7FjRGTy"
-client_id = "3ce5963b24db4cb4acae60120181ef74"
-client_secret = "e41717857a21483c8a2cddcce6617a6a"
+
 
 credentials = f"{client_id}:{client_secret}"
 client_creds_b64 = base64.b64encode(credentials.encode('ascii')).decode()
@@ -55,3 +65,35 @@ artist_followers = re.get('https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9my
 
 print(artist_followers.get('followers', {}).get('total', {}))
 print(artist_followers.get('popularity', {}))
+
+
+# start from the latest released albums
+yesterday = (datetime.now() - timedelta(days=1)).date().isoformat()
+results = []
+
+new_album_releases = re.get(
+    'https://api.spotify.com/v1/browse/new-releases',
+    headers=headers,
+    params={'limit': 20, 'country': 'US'}
+)
+new_album_releases.raise_for_status()
+
+counter = 50
+
+while counter > 0 and new_album_releases.json().get('albums', {}).get('next', {}):
+    next_batch = new_album_releases.json().get('albums', {}).get('items', {})
+    for album in next_batch:
+        print(f"{album['name']} — {album['release_date']}")
+        if album['release_date'] == yesterday:
+            results.append(album)
+    counter -= 1
+
+
+print(len(results))
+
+with open(f'/Users/sajad/Documents/GitHub/spotify_databricks/data/new_albums_{yesterday}.json', 'w') as output_file:
+    json.dump(results, output_file, indent=2)
+
+
+# print(new_album_releases.json().get('albums', {})['items'][0]['release_date'])
+# print(len(new_album_releases.json().get('albums', {})['items']))
