@@ -68,7 +68,7 @@ print(artist_followers.get('popularity', {}))
 
 
 # start from the latest released albums
-yesterday = (datetime.now() - timedelta(days=1)).date().isoformat()
+last_7_days = (datetime.now() - timedelta(days=7)).date().isoformat()
 results = []
 
 new_album_releases = re.get(
@@ -79,21 +79,23 @@ new_album_releases = re.get(
 new_album_releases.raise_for_status()
 
 counter = 50
+url = 'https://api.spotify.com/v1/browse/new-releases'
 
-while counter > 0 and new_album_releases.json().get('albums', {}).get('next', {}):
-    next_batch = new_album_releases.json().get('albums', {}).get('items', {})
-    for album in next_batch:
+while url:
+    response = re.get(url, headers=headers)
+    response.raise_for_status()
+    data = response.json()
+    
+    for album in data.get('albums',{}).get('items', []):
         print(f"{album['name']} — {album['release_date']}")
-        if album['release_date'] == yesterday:
+        if album['release_date'] >= last_7_days:
             results.append(album)
-    counter -= 1
+    url = data.get('albums',{}).get('next')
+    print(url)
+
 
 
 print(len(results))
 
-with open(f'/Users/sajad/Documents/GitHub/spotify_databricks/data/new_albums_{yesterday}.json', 'w') as output_file:
+with open(f'/Users/sajad/Documents/GitHub/spotify_databricks/data/new_albums_{last_7_days}.json', 'w') as output_file:
     json.dump(results, output_file, indent=2)
-
-
-# print(new_album_releases.json().get('albums', {})['items'][0]['release_date'])
-# print(len(new_album_releases.json().get('albums', {})['items']))
