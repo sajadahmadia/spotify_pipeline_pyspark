@@ -1,0 +1,2 @@
+complete the logging test and solve its issues
+complete the access token generator file and use the generated access token in the ingestion album search file
