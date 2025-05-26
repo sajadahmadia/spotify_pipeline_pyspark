@@ -12,13 +12,13 @@ def get_logger(filename, name=__name__):
         console_handler.setLevel(logging.DEBUG)
 
         # create a file handler
-        file_handler = logging.TimedRotatingFileHandler(
+        file_handler = TimedRotatingFileHandler(
             filename, when='midnight', interval=1, backupCount=7, encoding='utf-8')
         file_handler.setLevel(logging.INFO)
 
         # create a formatter and add to handlers
         formatter = logging.Formatter(
-            '%(asctime)s - %(name)s - %(levelname)s - %(message)s', style='{')
+            '%(asctime)s - %(name)s - %(levelname)s - %(message)s' )
         file_handler.setFormatter(formatter)
         console_handler.setFormatter(formatter)
 

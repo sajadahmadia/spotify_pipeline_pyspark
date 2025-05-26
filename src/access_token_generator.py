@@ -2,7 +2,6 @@ import requests
 import base64
 from dotenv import load_dotenv
 import os
-from utils.config import token_url
 
 
 def generate_temp_token(token_url):
@@ -22,6 +21,5 @@ def generate_temp_token(token_url):
     req = requests.post(token_url, data=token_data, headers=token_headers)
     token_response = req.json()
     access_token = token_response['access_token']
-    access_token_expiray = token_response['expires_in']
 
-    return token_response
+    return access_token
