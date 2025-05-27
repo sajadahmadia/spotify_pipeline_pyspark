@@ -1,13 +1,12 @@
 # create a file that every day, gets the album releases of the last 7 days
 from datetime import datetime, timedelta
 from src.access_token_generator import generate_temp_token
-from utils.config import token_url, base_rul, new_releases_endpoint
+from utils.config import base_rul, new_releases_endpoint
 import requests
 import json
 
 
-def ingestion(days):
-    access_token = generate_temp_token(token_url)
+def ingestion(days, access_token):
     last_7_days = (datetime.now() - timedelta(days)).date().isoformat()
     results = []
 

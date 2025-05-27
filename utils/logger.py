@@ -2,7 +2,7 @@ import logging
 from logging.handlers import TimedRotatingFileHandler
 
 
-def get_logger(filename, name=__name__):
+def get_logger(filename='logs.log', name=__name__):
     logger = logging.getLogger(name)
     logger.setLevel(logging.DEBUG)
 
@@ -18,7 +18,7 @@ def get_logger(filename, name=__name__):
 
         # create a formatter and add to handlers
         formatter = logging.Formatter(
-            '%(asctime)s - %(name)s - %(levelname)s - %(message)s' )
+            '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         file_handler.setFormatter(formatter)
         console_handler.setFormatter(formatter)
 
