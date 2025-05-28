@@ -1,2 +1,4 @@
 complete the logging test and solve its issues -- done
 complete the access token generator file and use the generated access token in the ingestion album search file
+add retrying to api calls 
+simulate a scenario in which you can only make 60 calls per minute in your api calls 

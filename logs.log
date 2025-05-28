@@ -1,0 +1,34 @@
+2025-05-28 17:48:06,864 - utils.logger - INFO - calling post api to get the access token
+2025-05-28 17:48:06,947 - utils.logger - INFO - access token generate BQBiy
+2025-05-28 18:28:29,953 - utils.logger - INFO - calling post api to get the access token
+2025-05-28 18:28:29,953 - utils.logger - INFO - access token generate mocke
+2025-05-28 18:28:29,954 - utils.logger - INFO - calling post api to get the access token
+2025-05-28 18:33:52,571 - utils.logger - INFO - calling post api to get the access token
+2025-05-28 18:33:52,672 - utils.logger - INFO - access token generate BQC4C
+2025-05-28 18:39:09,071 - utils.logger - INFO - calling post api to get the access token
+2025-05-28 18:39:09,157 - utils.logger - INFO - access token generate BQBtk
+2025-05-28 18:39:38,250 - utils.logger - INFO - calling post api to get the access token
+2025-05-28 18:39:38,321 - utils.logger - INFO - access token generate BQANU
+2025-05-28 18:53:14,106 - utils.logger - INFO - calling post api to get the access token
+2025-05-28 18:53:14,199 - utils.logger - INFO - access token generate BQCR-
+2025-05-28 18:53:14,199 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-05-28 18:53:15,914 - utils.logger - INFO - detected 6 new results
+2025-05-28 18:55:01,825 - utils.logger - INFO - calling post api to get the access token
+2025-05-28 18:55:01,955 - utils.logger - INFO - access token generate BQDfL
+2025-05-28 18:56:05,436 - utils.logger - INFO - https://api.spotify.com/v1/browse/new-releases
+2025-05-28 18:56:13,141 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-05-28 18:56:41,522 - utils.logger - ERROR - unexpected error happened: 
+Traceback (most recent call last):
+  File "/Users/sajad/Documents/GitHub/spotify_databricks/src/ingestion_album_search.py", line 23, in ingestion
+    data = response.json()
+  File "/Users/sajad/Documents/GitHub/spotify_databricks/src/ingestion_album_search.py", line 23, in ingestion
+    data = response.json()
+  File "/Users/sajad/.pyenv/versions/3.9.18/lib/python3.9/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/Users/sajad/.pyenv/versions/3.9.18/lib/python3.9/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+2025-05-28 19:07:27,110 - utils.logger - INFO - calling post api to get the access token
+2025-05-28 19:07:27,197 - utils.logger - INFO - access token generate BQCVi
+2025-05-28 19:07:27,197 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-05-28 19:07:29,027 - utils.logger - INFO - detected 6 new results

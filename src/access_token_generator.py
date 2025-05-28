@@ -17,12 +17,13 @@ def generate_temp_token(token_url):
     token_data = {"grant_type": "client_credentials"}
 
     token_headers = {"Authorization": f"Basic {client_creds_b64}"}
+    logger.info('calling post api to get the access token')
     req = requests.post(token_url, data=token_data, headers=token_headers)
     req.raise_for_status()
     try:
         token_response = req.json()
         access_token = token_response['access_token']
-
+        logger.info(f'access token generate {access_token[:5]}')
         return access_token
     except Exception as e:
         logger.exception(f'unexpected error in creating access token {e}')
