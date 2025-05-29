@@ -5,9 +5,12 @@ from utils.logger import get_logger
 import requests
 import json
 from retrying import retry
+from ratelimit import limits, sleep_and_retry
 
 
-@retry(stop_max_attempt_number=3, wait_fixed=1000)
+@retry(stop_max_attempt_number=5, wait_exponential_multiplier=1000, wait_exponential_max=60000)
+@sleep_and_retry
+@limits(calls=60, period=60)
 def make_api_request(url, headers):
     response = requests.get(url, headers=headers)
     response.raise_for_status()
@@ -49,8 +52,8 @@ def ingestion(days, access_token):
         raise
 
 
-if __name__ == '__main__':
-    from src.access_token_generator import generate_temp_token
-    from utils.config import token_url
-    access_token = generate_temp_token(token_url)
-    ingestion(5, access_token)
+# if __name__ == '__main__':
+#     from src.access_token_generator import generate_temp_token
+#     from utils.config import token_url
+#     access_token = generate_temp_token(token_url)
+#     ingestion(5, access_token)
