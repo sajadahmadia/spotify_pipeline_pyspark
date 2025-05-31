@@ -1,6 +1,6 @@
 import argparse
 
-from src.ingestion_album_search import ingestion
+from src.pipelines.album_release.ingestion_album_search import ingestion
 from src.access_token_generator import generate_temp_token
 from utils.config import token_url
 

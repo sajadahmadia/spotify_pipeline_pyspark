@@ -4,11 +4,11 @@ from dotenv import load_dotenv
 import os
 from utils.logger import get_logger
 
+logger = get_logger()
+load_dotenv()
+
 
 def generate_temp_token(token_url):
-
-    logger = get_logger()
-    load_dotenv()
 
     client_id = os.getenv("client_id")
     client_secret = os.getenv("client_secret")

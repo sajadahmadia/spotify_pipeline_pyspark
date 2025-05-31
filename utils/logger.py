@@ -2,7 +2,7 @@ import logging
 from logging.handlers import TimedRotatingFileHandler
 
 
-def get_logger(filename='logs.log', name=__name__):
+def get_logger(filepath='logs.log', name=__name__):
     logger = logging.getLogger(name)
     logger.setLevel(logging.DEBUG)
 
@@ -13,7 +13,7 @@ def get_logger(filename='logs.log', name=__name__):
 
         # create a file handler
         file_handler = TimedRotatingFileHandler(
-            filename, when='midnight', interval=1, backupCount=7, encoding='utf-8')
+            filepath, when='midnight', interval=1, backupCount=7, encoding='utf-8')
         file_handler.setLevel(logging.INFO)
 
         # create a formatter and add to handlers

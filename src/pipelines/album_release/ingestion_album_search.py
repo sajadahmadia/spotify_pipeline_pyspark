@@ -4,21 +4,12 @@ from utils.config import base_rul, new_releases_endpoint
 from utils.logger import get_logger
 import requests
 import json
-from retrying import retry
-from ratelimit import limits, sleep_and_retry
+from src.parser import make_api_request
 
-
-@retry(stop_max_attempt_number=5, wait_exponential_multiplier=1000, wait_exponential_max=60000)
-@sleep_and_retry
-@limits(calls=60, period=60)
-def make_api_request(url, headers):
-    response = requests.get(url, headers=headers)
-    response.raise_for_status()
-    return response.json()
+logger = get_logger()
 
 
 def ingestion(days, access_token):
-    logger = get_logger()
     last_n_days = (datetime.now() - timedelta(days)).date().isoformat()
     results = []
 

@@ -1,0 +1,28 @@
+2025-05-29 21:11:44,517 - utils.logger - INFO - calling post api to get the access token
+2025-05-29 21:11:44,598 - utils.logger - INFO - access token generate BQBMK
+2025-05-29 21:11:44,598 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-05-29 21:11:46,040 - utils.logger - INFO - detected 0 new results
+2025-05-29 21:13:27,293 - utils.logger - INFO - calling post api to get the access token
+2025-05-29 21:13:27,365 - utils.logger - INFO - access token generate BQAfR
+2025-05-29 21:13:27,365 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-05-29 21:13:28,871 - utils.logger - INFO - detected 0 new results
+2025-05-29 21:14:43,369 - utils.logger - INFO - calling post api to get the access token
+2025-05-29 21:14:43,448 - utils.logger - INFO - access token generate BQBki
+2025-05-29 21:14:43,448 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-05-29 21:14:45,140 - utils.logger - INFO - detected 0 new results
+2025-05-29 21:15:12,495 - utils.logger - INFO - calling post api to get the access token
+2025-05-29 21:15:12,553 - utils.logger - INFO - access token generate BQBEM
+2025-05-29 21:15:12,553 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-05-29 21:15:14,123 - utils.logger - INFO - detected 6 new results
+2025-05-29 21:16:43,286 - utils.logger - INFO - calling post api to get the access token
+2025-05-29 21:16:43,370 - utils.logger - INFO - access token generate BQDEo
+2025-05-29 21:16:43,370 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-05-29 21:16:44,952 - utils.logger - INFO - detected 6 new results
+2025-05-29 21:17:08,840 - utils.logger - INFO - calling post api to get the access token
+2025-05-29 21:17:08,910 - utils.logger - INFO - access token generate BQD6-
+2025-05-29 21:17:08,910 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-05-29 21:17:10,421 - utils.logger - INFO - detected 6 new results
+2025-05-29 21:33:28,568 - utils.logger - INFO - calling post api to get the access token
+2025-05-29 21:33:28,635 - utils.logger - INFO - access token generate BQBVj
+2025-05-29 21:33:28,635 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-05-29 21:33:30,218 - utils.logger - INFO - detected 31 new results
