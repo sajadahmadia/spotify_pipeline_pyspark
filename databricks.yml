@@ -1,0 +1,19 @@
+# This is a Databricks asset bundle definition for spotify_databricks.
+# The Databricks extension requires databricks.yml configuration file.
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
+
+bundle:
+  name: spotify_databricks
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://adb-1344784750432592.12.azuredatabricks.net
+
+  ## Optionally, there could be 'staging' or 'prod' targets here.
+  #
+  # prod:
+  #   workspace:
+  #     host: https://adb-1344784750432592.12.azuredatabricks.net

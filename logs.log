@@ -1,18 +1,84 @@
-2025-05-31 18:45:45,098 - utils.logger - INFO - calling post api to get the access token
-2025-05-31 18:45:45,174 - utils.logger - INFO - access token generate BQCGH
-2025-05-31 18:45:45,175 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
-2025-05-31 18:45:45,529 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases
-2025-05-31 18:45:45,881 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=20&limit=20
-2025-05-31 18:45:46,196 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=40&limit=20
-2025-05-31 18:45:46,456 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=60&limit=20
-2025-05-31 18:45:46,802 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=80&limit=20
-2025-05-31 18:45:46,803 - utils.logger - INFO - detected 6 new results
-2025-05-31 18:54:42,647 - utils.logger - INFO - calling post api to get the access token
-2025-05-31 18:54:42,720 - utils.logger - INFO - access token generate BQAkC
-2025-05-31 18:54:42,720 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
-2025-05-31 18:54:42,962 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases
-2025-05-31 18:54:43,281 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=20&limit=20
-2025-05-31 18:54:43,691 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=40&limit=20
-2025-05-31 18:54:43,967 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=60&limit=20
-2025-05-31 18:54:44,304 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=80&limit=20
-2025-05-31 18:54:44,305 - utils.logger - INFO - detected 0 new results
+2025-06-02 20:39:52,983 - utils.logger - INFO - logger info level test
+2025-06-02 20:40:21,297 - utils.logger - INFO - logger info level test
+2025-06-02 20:41:45,311 - utils.logger - INFO - logger info level test
+2025-06-02 20:41:45,314 - utils.logger - INFO - calling post api to get the access token
+2025-06-02 20:41:45,392 - utils.logger - INFO - access token generate BQC0e
+2025-06-02 20:41:56,087 - utils.logger - INFO - logger info level test
+2025-06-02 20:41:56,090 - utils.logger - INFO - calling post api to get the access token
+2025-06-02 20:41:56,160 - utils.logger - INFO - access token generate BQAZp
+2025-06-02 20:44:27,819 - utils.logger - INFO - logger info level test
+2025-06-02 20:44:27,820 - utils.logger - INFO - calling post api to get the access token
+2025-06-02 20:44:27,894 - utils.logger - INFO - access token generate BQCbH
+2025-06-02 20:53:17,258 - utils.logger - INFO - logger info level test
+2025-06-02 20:53:17,261 - utils.logger - INFO - calling post api to get the access token
+2025-06-02 20:53:17,347 - utils.logger - INFO - access token generate BQCzi
+2025-06-02 20:53:17,348 - utils.logger - INFO - calling post api to get the access token
+2025-06-02 20:58:49,604 - utils.logger - INFO - calling post api to get the access token
+2025-06-02 20:58:49,670 - utils.logger - INFO - access token generate BQCpf
+2025-06-02 20:58:49,670 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-06-02 20:58:50,072 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases
+2025-06-02 20:58:50,481 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=20&limit=20
+2025-06-02 20:58:50,756 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=40&limit=20
+2025-06-02 20:58:51,096 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=60&limit=20
+2025-06-02 20:58:51,504 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=80&limit=20
+2025-06-02 20:58:51,505 - utils.logger - INFO - detected 5 new results
+2025-06-02 21:29:31,975 - utils.logger - INFO - calling post api to get the access token
+2025-06-02 21:29:32,079 - utils.logger - INFO - access token generate BQC4Q
+2025-06-02 21:29:32,080 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-06-02 21:29:32,369 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases
+2025-06-02 21:29:32,605 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=20&limit=20
+2025-06-02 21:29:32,982 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=40&limit=20
+2025-06-02 21:29:33,293 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=60&limit=20
+2025-06-02 21:29:33,592 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=80&limit=20
+2025-06-02 21:29:33,593 - utils.logger - INFO - detected 5 new results
+2025-06-02 21:30:24,029 - utils.logger - INFO - calling post api to get the access token
+2025-06-02 21:30:24,111 - utils.logger - INFO - access token generate BQDrq
+2025-06-02 21:30:24,111 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-06-02 21:30:24,400 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases
+2025-06-02 21:30:24,686 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=20&limit=20
+2025-06-02 21:30:25,001 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=40&limit=20
+2025-06-02 21:30:25,410 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=60&limit=20
+2025-06-02 21:30:25,823 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=80&limit=20
+2025-06-02 21:30:25,824 - utils.logger - INFO - detected 5 new results
+2025-06-02 21:30:25,824 - utils.logger - ERROR - error in writing the data to dis: [Errno 2] No such file or directory: '/data/landing_zone_2025-05-26.json'
+Traceback (most recent call last):
+  File "/Users/sajad/Documents/GitHub/spotify_databricks/src/pipelines/album_release/album_search_data_extractor.py", line 35, in ingestion
+    with open(f'{path}_{last_n_days}.json', 'w') as output_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/landing_zone_2025-05-26.json'
+2025-06-02 21:30:25,828 - utils.logger - ERROR - unexpected error happened: [Errno 2] No such file or directory: '/data/landing_zone_2025-05-26.json'
+Traceback (most recent call last):
+  File "/Users/sajad/Documents/GitHub/spotify_databricks/src/pipelines/album_release/album_search_data_extractor.py", line 35, in ingestion
+    with open(f'{path}_{last_n_days}.json', 'w') as output_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/landing_zone_2025-05-26.json'
+2025-06-02 21:32:24,715 - utils.logger - INFO - calling post api to get the access token
+2025-06-02 21:32:24,788 - utils.logger - INFO - access token generate BQBGL
+2025-06-02 21:32:24,788 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-06-02 21:32:25,119 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases
+2025-06-02 21:32:25,530 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=20&limit=20
+2025-06-02 21:32:25,836 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=40&limit=20
+2025-06-02 21:32:26,228 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=60&limit=20
+2025-06-02 21:32:26,534 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=80&limit=20
+2025-06-02 21:32:26,535 - utils.logger - INFO - detected 5 new results
+2025-06-02 21:32:26,535 - utils.logger - ERROR - error in writing the data to dis: [Errno 2] No such file or directory: '/data/landing_zone/new_albums_2025-05-26.json'
+Traceback (most recent call last):
+  File "/Users/sajad/Documents/GitHub/spotify_databricks/src/pipelines/album_release/album_search_data_extractor.py", line 35, in ingestion
+    with open(f'{path}/new_albums_{last_n_days}.json', 'w') as output_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/landing_zone/new_albums_2025-05-26.json'
+2025-06-02 21:32:26,540 - utils.logger - ERROR - unexpected error happened: [Errno 2] No such file or directory: '/data/landing_zone/new_albums_2025-05-26.json'
+Traceback (most recent call last):
+  File "/Users/sajad/Documents/GitHub/spotify_databricks/src/pipelines/album_release/album_search_data_extractor.py", line 35, in ingestion
+    with open(f'{path}/new_albums_{last_n_days}.json', 'w') as output_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/landing_zone/new_albums_2025-05-26.json'
+2025-06-02 21:33:54,889 - utils.logger - INFO - calling post api to get the access token
+2025-06-02 21:33:54,964 - utils.logger - INFO - access token generate BQB41
+2025-06-02 21:33:54,965 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-06-02 21:33:55,280 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases
+2025-06-02 21:33:55,543 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=20&limit=20
+2025-06-02 21:33:55,868 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=40&limit=20
+2025-06-02 21:33:56,179 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=60&limit=20
+2025-06-02 21:33:56,480 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=80&limit=20
+2025-06-02 21:33:56,480 - utils.logger - INFO - detected 5 new results

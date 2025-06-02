@@ -1,0 +1,18 @@
+2025-05-31 18:45:45,098 - utils.logger - INFO - calling post api to get the access token
+2025-05-31 18:45:45,174 - utils.logger - INFO - access token generate BQCGH
+2025-05-31 18:45:45,175 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-05-31 18:45:45,529 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases
+2025-05-31 18:45:45,881 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=20&limit=20
+2025-05-31 18:45:46,196 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=40&limit=20
+2025-05-31 18:45:46,456 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=60&limit=20
+2025-05-31 18:45:46,802 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=80&limit=20
+2025-05-31 18:45:46,803 - utils.logger - INFO - detected 6 new results
+2025-05-31 18:54:42,647 - utils.logger - INFO - calling post api to get the access token
+2025-05-31 18:54:42,720 - utils.logger - INFO - access token generate BQAkC
+2025-05-31 18:54:42,720 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-05-31 18:54:42,962 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases
+2025-05-31 18:54:43,281 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=20&limit=20
+2025-05-31 18:54:43,691 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=40&limit=20
+2025-05-31 18:54:43,967 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=60&limit=20
+2025-05-31 18:54:44,304 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=80&limit=20
+2025-05-31 18:54:44,305 - utils.logger - INFO - detected 0 new results

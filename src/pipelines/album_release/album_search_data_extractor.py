@@ -9,7 +9,7 @@ from src.parser import make_api_request
 logger = get_logger()
 
 
-def ingestion(days, access_token):
+def ingestion(path, days, access_token):
     last_n_days = (datetime.now() - timedelta(days)).date().isoformat()
     results = []
 
@@ -32,8 +32,9 @@ def ingestion(days, access_token):
         # print(len(results))
         logger.info(f'detected {len(results)} new results')
         try:
-            with open(f'/Users/sajad/Documents/GitHub/spotify_databricks/data/new_albums_{last_n_days}.json', 'w') as output_file:
+            with open(f'{path}/new_albums_{last_n_days}.json', 'w') as output_file:
                 json.dump(results, output_file, indent=2)
+
         except Exception as e:
             logger.exception(f'error in writing the data to dis: {e}')
             raise

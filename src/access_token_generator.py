@@ -28,10 +28,3 @@ def generate_temp_token(token_url):
     except Exception as e:
         logger.exception(f'unexpected error in creating access token {e}')
         raise
-
-
-# if __name__ == '__main__':
-#     # Local debug/test usage only
-#     from utils.config import token_url
-#     token = generate_temp_token(token_url)
-#     print(token)
