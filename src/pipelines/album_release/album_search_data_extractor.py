@@ -2,7 +2,6 @@
 from datetime import datetime, timedelta
 from utils.config import base_rul, new_releases_endpoint
 from utils.logger import get_logger
-import requests
 import json
 from src.parser import make_api_request
 

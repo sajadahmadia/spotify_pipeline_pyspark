@@ -8,4 +8,4 @@ simulate a scenario in which you can only make 60 calls per minute in your api c
 
 
 -- update the path of the bronze, silver, ... layers using env varialbes and .... 
--- create the bronze layer using spark
+-- create the latest albums file to read the data from the landing zone

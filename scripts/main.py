@@ -2,7 +2,7 @@ import argparse
 
 from src.pipelines.album_release.album_search_data_extractor import ingestion
 from src.access_token_generator import generate_temp_token
-from utils.config import token_url
+from utils.config import token_url, LANDING_ZONE_PATH
 
 
 def run():
@@ -21,7 +21,7 @@ def run():
     parser.add_argument(
         "--path",
         required=False,
-        default="data/landing_zone",
+        default=LANDING_ZONE_PATH,
         type=str,
         help='path to ingest the initial read data'
     )
