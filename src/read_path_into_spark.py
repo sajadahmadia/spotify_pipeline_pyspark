@@ -7,7 +7,7 @@ logger = get_logger()
 def read_data(
         spark: SparkSession,
         read_path: str,
-        fmt: str,
+        fmt: str = 'delta',
         options: dict | None = None) -> DataFrame:
     try:
         logger.info(
