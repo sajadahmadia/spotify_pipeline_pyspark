@@ -9,7 +9,17 @@ logger = get_logger()
 @retry(stop_max_attempt_number=5, wait_exponential_multiplier=1000, wait_exponential_max=60000)
 @sleep_and_retry
 @limits(calls=60, period=60)
-def make_api_request(url, headers, timeout=10):
+def make_api_request(url: str, headers: dict, timeout=10):
+    """Gernal function: makes call to any given urls, with any given headers
+
+    Args:
+        url (str): the url endpoint to make calls
+        headers (dict): headers of the api call
+        timeout (int, optional): time to wait for response. Defaults to 10 seconds.
+
+    Returns:
+        json: returns a response.json() object
+    """
     try:
         response = requests.get(url, headers=headers, timeout=timeout)
         response.raise_for_status()

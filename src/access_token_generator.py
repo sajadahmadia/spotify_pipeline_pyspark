@@ -8,7 +8,15 @@ logger = get_logger()
 load_dotenv()
 
 
-def generate_temp_token(token_url):
+def generate_temp_token(token_url: str):
+    """function for internal usaage, connects to the spotify app and generates an access token, will be further used to call the api
+
+    Args:
+        token_url (str): the token url of your spotify app
+
+    Returns:
+        access_token: this access token will be used in the main api call function
+    """
 
     client_id = os.getenv("client_id")
     client_secret = os.getenv("client_secret")

@@ -1,7 +1,7 @@
 complete the logging test and solve its issues -- done
-complete the access token generator file and use the generated access token in the ingestion album search file
-add retrying to api calls 
-simulate a scenario in which you can only make 60 calls per minute in your api calls 
+complete the access token generator file and use the generated access token in the ingestion album search file -- done
+add retrying to api calls -- done
+simulate a scenario in which you can only make 60 calls per minute in your api calls -- done
 
 --releases albums >
 --- album_type(different values), artists(list of dicts of dicts), name, release_date, total_tracks, id, uri, external_urls

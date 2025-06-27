@@ -8,7 +8,18 @@ from src.parser import make_api_request
 logger = get_logger()
 
 
-def ingestion(path, days, access_token):
+def ingestion(path: str, days: int, access_token: str) -> json:  # type: ignore
+    """makes calls to the new releases endpoint of the spotify app and returns a json file per function call
+
+    Args:
+        path (str): path to ingest the json file, received from the api call
+        days (int): the `new releases endpoint` accepts a parameter to retrieve the newest albums in the last n days
+        access_token (str): needs to be generated in the previous steps
+
+    Returns:
+        json: a json file gets created in the given path with every call of the function
+    """
+
     last_n_days = (datetime.now() - timedelta(days)).date().isoformat()
     results = []
 

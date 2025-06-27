@@ -8,6 +8,14 @@ _spark = None
 
 
 def get_spark(app_name='spotify_data_pipeline'):
+    """General function: to create the spark session, can handle both databricks and non-databricks implementations. can support delta files (the builder)
+
+    Args:
+        app_name (str, optional): a nice name for the spark application. Defaults to 'spotify_data_pipeline'.
+
+    Returns:
+        _spark: returns the spark session
+    """
     global _spark
     if _spark is None:
         logger.info('creating a spark session...')
