@@ -1,3 +1,5 @@
+#to call the api and ingest the data to the landing zone
+
 import argparse
 
 from src.pipelines.album_release.album_search_data_extractor import ingestion

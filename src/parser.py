@@ -1,6 +1,6 @@
-from retrying import retry
-from ratelimit import limits, sleep_and_retry
-import requests
+from retrying import retry  # type: ignore
+from ratelimit import limits, sleep_and_retry  # type: ignore
+import requests  # type: ignore
 from utils.logger import get_logger
 
 logger = get_logger()
