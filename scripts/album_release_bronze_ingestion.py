@@ -1,8 +1,8 @@
 # reads from the landing zone path and writes as delta lake into bronze layer
 from utils.config import LANDING_ZONE_PATH, BRONZE_PATH
-from src.read_path_into_spark import read_data
-from src.write_into_path import writer
-from src.spark_manager import get_spark
+from src.general_functions.read_path_into_spark import read_data
+from src.general_functions.write_into_path import writer
+from src.general_functions.spark_manager import get_spark
 
 
 def run(LANDING_ZONE_PATH, BRONZE_PATH, **options):

@@ -1,34 +1,43 @@
-2025-06-27 19:49:12,880 - utils.logger - INFO - creating a spark session...
-2025-06-27 19:49:15,276 - utils.logger - INFO - spark session created successfully
-2025-06-27 19:49:15,277 - utils.logger - INFO - start reading data at path : data/landing_zone, formt : json, options : {'multiline': True}
-2025-06-27 19:49:16,516 - utils.logger - INFO - successfully read data at data/landing_zone
-2025-06-27 19:49:16,516 - utils.logger - INFO - read function call ended
-2025-06-27 19:49:16,516 - utils.logger - INFO - start writing data to path : data/bronze, format : delta, options : None
-2025-06-27 19:49:20,311 - utils.logger - INFO - successfully wrote data to data/bronze
-2025-06-27 19:49:20,311 - utils.logger - INFO - write function call ended
-2025-06-27 19:52:37,790 - utils.logger - INFO - calling post api to get the access token
-2025-06-27 19:52:37,874 - utils.logger - INFO - access token generate BQAlk
-2025-06-27 19:52:37,874 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
-2025-06-27 19:52:38,263 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases
-2025-06-27 19:52:38,668 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=20&limit=20
-2025-06-27 19:52:38,979 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=40&limit=20
-2025-06-27 19:52:39,270 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=60&limit=20
-2025-06-27 19:52:39,575 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=80&limit=20
-2025-06-27 19:52:39,577 - utils.logger - INFO - detected 44 new results
-2025-06-27 20:48:55,065 - utils.logger - INFO - calling post api to get the access token
-2025-06-27 20:48:55,147 - utils.logger - INFO - access token generate BQAAw
-2025-06-27 20:48:55,148 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
-2025-06-27 20:48:55,435 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases
-2025-06-27 20:48:55,844 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=20&limit=20
-2025-06-27 20:48:56,151 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=40&limit=20
-2025-06-27 20:48:56,458 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=60&limit=20
-2025-06-27 20:48:56,765 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=80&limit=20
-2025-06-27 20:48:56,766 - utils.logger - INFO - detected 44 new results
-2025-06-27 20:49:02,356 - utils.logger - INFO - creating a spark session...
-2025-06-27 20:49:04,927 - utils.logger - INFO - spark session created successfully
-2025-06-27 20:49:04,927 - utils.logger - INFO - start reading data at path : data/landing_zone, formt : json, options : {'multiline': True}
-2025-06-27 20:49:06,215 - utils.logger - INFO - successfully read data at data/landing_zone
-2025-06-27 20:49:06,215 - utils.logger - INFO - read function call ended
-2025-06-27 20:49:06,215 - utils.logger - INFO - start writing data to path : data/bronze, format : delta, options : None
-2025-06-27 20:49:10,968 - utils.logger - INFO - successfully wrote data to data/bronze
-2025-06-27 20:49:10,968 - utils.logger - INFO - write function call ended
+2025-06-29 11:22:05,310 - utils.logger - INFO - calling post api to get the access token
+2025-06-29 11:22:05,400 - utils.logger - INFO - access token generate BQDJO
+2025-06-29 11:22:05,400 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-06-29 11:22:05,804 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases
+2025-06-29 11:22:06,110 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=20&limit=20
+2025-06-29 11:22:06,417 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=40&limit=20
+2025-06-29 11:22:06,675 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=60&limit=20
+2025-06-29 11:22:07,032 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=80&limit=20
+2025-06-29 11:22:07,033 - utils.logger - INFO - detected 10 new results
+2025-06-29 11:22:19,575 - utils.logger - INFO - calling post api to get the access token
+2025-06-29 11:22:19,637 - utils.logger - INFO - access token generate BQBw4
+2025-06-29 11:22:19,637 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-06-29 11:22:20,035 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases
+2025-06-29 11:22:20,341 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=20&limit=20
+2025-06-29 11:22:20,651 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=40&limit=20
+2025-06-29 11:22:20,879 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=60&limit=20
+2025-06-29 11:22:21,265 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=80&limit=20
+2025-06-29 11:22:21,266 - utils.logger - INFO - detected 10 new results
+2025-06-29 11:24:04,420 - utils.logger - INFO - creating a spark session...
+2025-06-29 11:24:06,919 - utils.logger - INFO - spark session created successfully
+2025-06-29 11:24:06,919 - utils.logger - INFO - start reading data at path : data/landing_zone, formt : json, options : {'multiline': True}
+2025-06-29 11:24:08,267 - utils.logger - INFO - successfully read data at data/landing_zone
+2025-06-29 11:24:08,267 - utils.logger - INFO - read function call ended
+2025-06-29 11:24:08,267 - utils.logger - INFO - start writing data to path : data/bronze, format : delta, options : None
+2025-06-29 11:24:12,907 - utils.logger - INFO - successfully wrote data to data/bronze
+2025-06-29 11:24:12,908 - utils.logger - INFO - write function call ended
+2025-06-29 11:29:45,756 - utils.logger - INFO - calling post api to get the access token
+2025-06-29 11:29:45,827 - utils.logger - INFO - access token generate BQDke
+2025-06-29 11:29:45,827 - utils.logger - INFO - starting to call the api endpoint at: https://api.spotify.com/v1/browse/new-releases
+2025-06-29 11:29:46,109 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases
+2025-06-29 11:29:46,398 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=20&limit=20
+2025-06-29 11:29:46,704 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=40&limit=20
+2025-06-29 11:29:47,116 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=60&limit=20
+2025-06-29 11:29:47,528 - utils.logger - INFO - a new get call to url: https://api.spotify.com/v1/browse/new-releases?offset=80&limit=20
+2025-06-29 11:29:47,529 - utils.logger - INFO - detected 28 new results
+2025-06-29 11:31:02,572 - utils.logger - INFO - creating a spark session...
+2025-06-29 11:31:04,806 - utils.logger - INFO - spark session created successfully
+2025-06-29 11:31:04,806 - utils.logger - INFO - start reading data at path : data/landing_zone, formt : json, options : {'multiline': True}
+2025-06-29 11:31:06,120 - utils.logger - INFO - successfully read data at data/landing_zone
+2025-06-29 11:31:06,120 - utils.logger - INFO - read function call ended
+2025-06-29 11:31:06,120 - utils.logger - INFO - start writing data to path : data/bronze, format : delta, options : None
+2025-06-29 11:31:10,683 - utils.logger - INFO - successfully wrote data to data/bronze
+2025-06-29 11:31:10,683 - utils.logger - INFO - write function call ended

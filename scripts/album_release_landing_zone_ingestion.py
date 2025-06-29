@@ -3,9 +3,8 @@
 import argparse
 
 from src.pipelines.album_release.album_search_data_extractor import ingestion
-from src.access_token_generator import generate_temp_token
+from src.general_functions.access_token_generator import generate_temp_token
 from utils.config import token_url, LANDING_ZONE_PATH
-
 
 def run():
     """Entry point"""

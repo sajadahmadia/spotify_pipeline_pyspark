@@ -1,5 +1,5 @@
 import pytest
-from src.access_token_generator import generate_temp_token
+from general_functions.access_token_generator import generate_temp_token
 from utils.config import token_url
 import requests
 from unittest.mock import patch, Mock
