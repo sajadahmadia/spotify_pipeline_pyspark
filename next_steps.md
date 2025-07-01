@@ -25,3 +25,7 @@ simulate a scenario in which you can only make 60 calls per minute in your api c
 
 
 -- working on explorations/read_bronze_latest_albums.py file, array of structs
+-- build the bronze layer by just adding technial metadata
+-- build the silver layer by separating images, artists, albums 
+-- bruild the gold layer by group by release year, album types, artist number of files, ... 
+
