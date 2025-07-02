@@ -2,7 +2,7 @@
 
 import argparse
 
-from src.pipelines.album_release.album_search_data_extractor import ingestion
+from pipelines.album_release.extraction_layer.album_search_data_extractor import ingestion
 from src.general_functions.access_token_generator import generate_temp_token
 from utils.config import token_url, LANDING_ZONE_PATH
 
