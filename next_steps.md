@@ -24,8 +24,15 @@ simulate a scenario in which you can only make 60 calls per minute in your api c
 
 
 
--- working on explorations/read_bronze_latest_albums.py file, array of structs
+-- working on explorations/read_bronze_latest_albums.py file, array of structs --done
 -- build the bronze layer by just adding technial metadata
 -- build the silver layer by separating images, artists, albums 
 -- bruild the gold layer by group by release year, album types, artist number of files, ... 
 
+extra parts:
+-- make the logger function to create log files in a directory under the logs file that corresponds to the relative path of the function called
+-- use great expectaions package for data quality tests
+
+
+-- next step:
+-- problem: in src/pipelines/album_release/silver_layer/bronze_to_silver_albums.py file, although i added new columns, it doesn't show!

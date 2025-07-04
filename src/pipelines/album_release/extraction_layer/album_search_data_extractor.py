@@ -9,7 +9,7 @@ logger = get_logger()
 
 
 def ingestion(path: str, days: int, access_token: str) -> json:  # type: ignore
-    """makes calls to the new releases endpoint of the spotify app and returns a json file per function call
+    """makes calls to the "new_releases" endpoint of the spotify app and returns a json file per function call
 
     Args:
         path (str): path to ingest the json file, received from the api call
