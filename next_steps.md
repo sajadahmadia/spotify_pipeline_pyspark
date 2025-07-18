@@ -30,9 +30,9 @@ simulate a scenario in which you can only make 60 calls per minute in your api c
 -- bruild the gold layer by group by release year, album types, artist number of files, ... 
 
 extra parts:
--- make the logger function to create log files in a directory under the logs file that corresponds to the relative path of the function called
+-- make the logger function to create log files in a directory under the logs file that corresponds to the relative path of the function called --done
 -- use great expectaions package for data quality tests
 
 
 -- next step:
--- problem: in src/pipelines/album_release/silver_layer/bronze_to_silver_albums.py file, although i added new columns, it doesn't show!
+-- in the bronze layer to silver layer, we have extracted only album data. there are artist data and images data. it's transformation logic is ready at the explorations/read_bronze_latest_albums.py file

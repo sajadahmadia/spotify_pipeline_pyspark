@@ -1,10 +1,11 @@
-#to call the api and ingest the data to the landing zone
+# to call the api and ingest the data to the landing zone
 
 import argparse
 
-from pipelines.album_release.extraction_layer.album_search_data_extractor import ingestion
+from src.pipelines.album_release.extraction_layer.album_search_data_extractor import ingestion
 from src.general_functions.access_token_generator import generate_temp_token
 from utils.config import token_url, LANDING_ZONE_PATH
+
 
 def run():
     """Entry point"""
@@ -12,7 +13,7 @@ def run():
         description="arguments used in the ingestion layer")
 
     parser.add_argument(
-        "--days",
+        "--days",Í
         required=False,
         default=7,
         type=int,
