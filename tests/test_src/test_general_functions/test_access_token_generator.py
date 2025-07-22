@@ -1,26 +1,7 @@
 import pytest
-from unittest.mock import patch, Mock
+from unittest.mock import patch, Mock, MagicMock
 import requests
 from src.general_functions.access_token_generator import generate_temp_token
-
-
-def test_token_generation_fails_with_bad_credentials_01():
-    """Test that function raises error when API returns 401"""
-
-    # Mock everything at once with decorators
-    with patch('src.general_functions.access_token_generator.os.getenv') as mock_env, \
-            patch('src.general_functions.access_token_generator.requests.post') as mock_post:
-
-        # Setup: fake credentials
-        mock_env.return_value = "fake_value"
-
-        # Setup: make post() raise error
-        mock_post.side_effect = requests.HTTPError("401 Error")
-
-        # Test: function should crash
-        with pytest.raises(requests.HTTPError):
-            generate_temp_token("http://fake-url.com")
-
 
 def test_generate_temp_token_http_401_error():
     """Test token generation when Spotify returns 401 Unauthorized error"""
@@ -58,3 +39,23 @@ def test_generate_temp_token_http_401_error():
         # TBD: Verify that requests.post was called exactly once
         # YOUR CODE HERE
         mock_post.assert_called_once()
+
+
+def test_generate_temp_token_token_generation():
+    """ Happy Path: when everything goes well and token gets generated"""
+    token_url = "https://some_path.com"
+    mock_response = Mock()
+    
+    with patch('src.general_functions.access_token_generator.os.getenv') as mock_getenv, \
+        patch("src.general_functions.access_token_generator.requests.post") as mocked_requests_post:
+        mock_getenv.side_effect = lambda key: {
+            "client_id": "valid_client_id",
+            "client_secret": "valid_secret"
+        }.get(key)
+        
+        mock_response.status_code = 200
+        mock_response.json.return_value = {'access_token' : 'xxxxxxxx'}
+        mocked_requests_post.return_value = mock_response
+
+        result = generate_temp_token(token_url)
+        assert result == 'xxxxxxxx'
