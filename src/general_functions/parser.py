@@ -30,7 +30,7 @@ def make_api_request(url: str, headers: dict, timeout=10):
         raise
 
     except Exception as e:
-        logger.info(f'unexpected error happend: {e}')
+        logger.exception(f'unexpected error happend: {e}')
         raise
 
     finally:
