@@ -1,5 +1,5 @@
 from pyspark.sql import functions as F
-from src.general_functions.spark_manager import get_spark, stop_spark
+from src.general_functions.spark_manager import get_spark
 from src.general_functions.read_path_into_spark import read_data
 from src.general_functions.write_into_path import writer
 from utils.logger import get_logger
@@ -41,16 +41,18 @@ def transform_albums(
          F.col('external_urls.spotify').alias('spotify_url'),
          'href',
          'uri'
-         ]
-    ).filter(F.col('album_id').isNotNull()).dropDuplicates(['album_id'])\
-        .withColumns(
-            {
-                'release_year': F.year('release_date'),
-                'release_month': F.month('release_date'),
-                'release_weekday': F.dayofweek('release_date'),
-                'available_markets_count': F.size('available_markets')
-            }
-    ).distinct()
+         ])\  
+        #deduplication 
+            .filter(F.col('album_id').isNotNull()).dropDuplicates(['album_id'])\
+        #adding generated columns 
+                .withColumns(
+                                {
+                                    'release_year': F.year('release_date'),
+                                    'release_month': F.month('release_date'),
+                                    'release_weekday': F.dayofweek('release_date'),
+                                    'available_markets_count': F.size('available_markets')
+                                }
+                        )
 
     df_quality = df.select(
         F.sum(F.when(F.col('album_id').isNull(), 1).otherwise(

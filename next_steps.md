@@ -31,8 +31,19 @@ simulate a scenario in which you can only make 60 calls per minute in your api c
 
 extra parts:
 -- make the logger function to create log files in a directory under the logs file that corresponds to the relative path of the function called --done
+
+
+-- next module:
+-- in the bronze layer to silver layer, we have extracted only album data. there are artist data and images data. it's transformation logic is ready at the explorations/read_bronze_latest_albums.py file
 -- use great expectaions package for data quality tests
 
-
 -- next step:
--- in the bronze layer to silver layer, we have extracted only album data. there are artist data and images data. it's transformation logic is ready at the explorations/read_bronze_latest_albums.py file
+-- complete src/general_functions/upsert_into_path.py
+
+-- Schema evolution handling
+-- json as schema
+-- Partitioning & Z-Ordering 
+-- merge and incremental loading
+-- data quality tests
+-- ci/cd using github actions
+-- use terraform to deply Databricks workspaces and clusters.
