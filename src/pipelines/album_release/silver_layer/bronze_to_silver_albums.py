@@ -16,50 +16,79 @@ def transform_albums(
     write_mode: str = 'overwrite',
     write_options: Dict[str, str] = DEFAULT_SILVER_WRITE_OPTIONS
 ) -> None:
-    """_summary_
+    """Transform album data from bronze to silver layer.
 
     Args:
-        read_path (str): _description_
-        write_path (str): _description_
+        read_path: Path to bronze Delta table
+        write_path: Path to silver Delta table
+        write_mode: Spark write mode (default: 'overwrite')
+        write_options: Additional write options
     """
+    df = None
 
-    df = read_data(spark, read_path, 'delta')
+    try:
+        df = read_data(spark, read_path, 'delta')
 
-    # initial_count
-    count = df.count()
-    logger.info(f'read {count} records at path {read_path}')
+        # initial_count
 
-    df = df.select(
-        [F.col('id').alias('album_id'),
-         F.col('name').alias('album_name'),
-         F.col('release_date').cast('date').alias('release_date'),
-         F.col('release_date_precision'),
-         F.col('total_tracks'),
-         F.col('type').alias('object_type'),
-         'album_type',
-         'available_markets',
-         F.col('external_urls.spotify').alias('spotify_url'),
-         'href',
-         'uri'
-         ])\  
-        #deduplication 
+        if not df.head(1):
+            raise ValueError(f"no data found at path {read_path}")
+
+    except Exception as e:
+        logger.exception(f"failed to read data at path {read_path}")
+        raise
+
+    try:
+        df.cache()
+        initial_count = df.count()
+        logger.info(f'read {initial_count} records at path {read_path}')
+        try:
+            logger.info("starting transformation")
+
+            df_transformed = df.select(
+                [F.col('id').alias('album_id'),
+                 F.col('name').alias('album_name'),
+                 F.col('release_date').cast('date').alias('release_date'),
+                 F.col('release_date_precision'),
+                 F.col('total_tracks'),
+                 F.col('type').alias('object_type'),
+                 'album_type',
+                 'available_markets',
+                 F.col('external_urls.spotify').alias('spotify_url'),
+                 'href',
+                 'uri'
+                 ])\
+                # deduplication
             .filter(F.col('album_id').isNotNull()).dropDuplicates(['album_id'])\
-        #adding generated columns 
-                .withColumns(
-                                {
-                                    'release_year': F.year('release_date'),
-                                    'release_month': F.month('release_date'),
-                                    'release_weekday': F.dayofweek('release_date'),
-                                    'available_markets_count': F.size('available_markets')
-                                }
-                        )
+                # adding generated columns
+            .withColumns(
+                {
+                    'release_year': F.year('release_date'),
+                    'release_month': F.month('release_date'),
+                    'release_weekday': F.dayofweek('release_date'),
+                    'available_markets_count': F.size('available_markets')
+                }
+            )
 
-    df_quality = df.select(
-        F.sum(F.when(F.col('album_id').isNull(), 1).otherwise(
-            0)).alias('null_album_ids')
-    )
+            final_count = df_transformed.count()
+            if final_count == 0:
+                raise ValueError(
+                    "all records were filtered out during transformation logic...")
 
-    logger.info(
-        f'after processing, encountred {df_quality.select("null_album_ids").collect()[0][0]} rows with null album id')
-    writer(df, write_path, mode=write_mode,
-           options=write_options)
+        except ValueError:
+            raise  # to catch other valuerror exceptions
+        except Exception as e:
+            logger.exception(f"failed during transformation")
+            raise
+
+        try:
+            logger.info(f"writing {final_count} rows to path {write_path}")
+            writer(df_transformed, write_path, mode=write_mode,
+                   options=write_options)
+        except Exception as e:
+            logger.exception(f"encountered error: {e}")
+            raise
+    finally:
+        if df:
+            df.unpersist()
+            logger.debug("unpresisted cached df")
