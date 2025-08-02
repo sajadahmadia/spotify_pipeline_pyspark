@@ -58,10 +58,8 @@ def transform_albums(
                  'href',
                  'uri'
                  ])\
-                # deduplication
-            .filter(F.col('album_id').isNotNull()).dropDuplicates(['album_id'])\
-                # adding generated columns
-            .withColumns(
+                .filter(F.col('album_id').isNotNull()).dropDuplicates(['album_id'])\
+                .withColumns(
                 {
                     'release_year': F.year('release_date'),
                     'release_month': F.month('release_date'),

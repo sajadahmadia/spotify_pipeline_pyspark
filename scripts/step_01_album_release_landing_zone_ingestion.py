@@ -13,7 +13,7 @@ def run():
         description="arguments used in the ingestion layer")
 
     parser.add_argument(
-        "--days",Í
+        "--days",
         required=False,
         default=7,
         type=int,
