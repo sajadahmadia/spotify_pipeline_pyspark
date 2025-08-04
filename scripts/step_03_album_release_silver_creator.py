@@ -1,6 +1,9 @@
-from src.pipelines.album_release.silver_layer.bronze_to_silver_albums import transform_albums
-from src.pipelines.album_release.silver_layer.bronze_to_silver_artists import transform_artists
-from src.pipelines.album_release.silver_layer.bronze_to_silver_images import transform_images
+from src.pipelines.album_release.silver_layer.transformations.bronze_to_silver_albums import transform_albums
+from src.pipelines.album_release.silver_layer.transformations.bronze_to_silver_artists import transform_artists
+from src.pipelines.album_release.silver_layer.transformations.bronze_to_silver_images import transform_images
+from src.pipelines.album_release.silver_layer.data_quality_checks.silver_data_fact_dim_main_relations import validate_silver_layer
+from src.pipelines.album_release.silver_layer.data_quality_checks.silver_data_completeness_data import validate_release_date
+
 from datetime import datetime
 from src.general_functions.spark_manager import get_spark
 from utils.logger import get_logger
@@ -46,12 +49,22 @@ def main():
         logger.info("STEP 4: Validating Results")
         logger.info("="*50)
         # Add validation logic here
+        fact_dim_passed, validation_results = validate_silver_layer(
+            SILVER_PATH, SILVER_FACT_ALBUMS, SILVER_DIM_ARTISTS, SILVER_BRIDGE_ARTISTS_ALBUMS
+        )
+        completeness_passed = validate_release_date(
+            SILVER_PATH, SILVER_FACT_ALBUMS)
+
+        if not (fact_dim_passed and completeness_passed):
+            logger.error(
+                f"Data quality validation failed! validation results: {validation_results}")
+            raise ValueError("Silver layer validation failed")
 
         duration = datetime.now() - start_time
         logger.info(f"Pipeline completed successfully in {duration}")
 
     except Exception as e:
-        logger.exception("Pipeline failed")
+        logger.exception(f"Pipeline failed. error message: {e}")
 
 
 if __name__ == "__main__":
