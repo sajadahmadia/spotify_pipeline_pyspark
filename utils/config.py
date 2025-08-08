@@ -23,3 +23,6 @@ SILVER_DIM_ARTISTS = "dim_artists"
 SILVER_DIM_IMAGES = "dim_images"
 SILVER_BRIDGE_ARTISTS_ALBUMS = "bridge_artists_albums"
 SILVER_BRIDGE_IMAGES_ALBUMS = "bridge_images_albums"
+
+GOLD_PATH = f'{DATABASE_PATH}/gold'
+GOLD_ARTISTS_SUMMARY = "gold_artists"
