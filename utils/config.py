@@ -26,3 +26,4 @@ SILVER_BRIDGE_IMAGES_ALBUMS = "bridge_images_albums"
 
 GOLD_PATH = f'{DATABASE_PATH}/gold'
 GOLD_ARTISTS_SUMMARY = "gold_artists"
+GOLD_ARTISTS_GROWTH = "gold_artist_growth"
