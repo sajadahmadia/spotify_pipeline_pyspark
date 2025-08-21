@@ -41,12 +41,12 @@ def create_artist_album_summary(
             spark, f'{silver_path}/{dim_artists_path}', 'delta')
 
         # creating a base dataset with all artist-album relationships
-        df_base = df_bridge.alias('b').join(
-            df_albums.alias('a'),
+        df_base = df_albums.alias('b').join(
+            F.broadcast(df_bridge).alias('a'),
             F.col('b.album_id') == F.col('a.album_id'),
             'inner'
         ).join(
-            df_artists.alias('ar'),
+            F.broadcast(df_artists).alias('ar'),
             F.col('b.artist_id') == F.col('ar.artist_id'),
             'inner'
         )
