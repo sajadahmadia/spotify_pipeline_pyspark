@@ -24,6 +24,7 @@ def get_spark(app_name='spotify_data_pipeline'):
             .builder
             .appName(app_name)
             .config('spark.sql.adaptive.enabled', 'true')
+            .config("spark.sql.adaptive.coalescePartitions.enabled", "true")
             .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
             .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
         )
