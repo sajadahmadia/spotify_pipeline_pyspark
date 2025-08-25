@@ -20,6 +20,7 @@ def create_artist_album_summary(
     fact_albums_path: str,
     dim_artists_path: str,
     bridge_table_path: str,
+    SAFE_BROADCAST_ROWS: int = 1000000,
     write_mode: str = 'upsert'
 ) -> None:
     """Creating artist album summary gold table with aggregated metrics.
@@ -34,22 +35,41 @@ def create_artist_album_summary(
         # loading silver tables
         logger.info("Loading silver layer tables")
         df_albums = read_data(
-            spark, f'{silver_path}/{fact_albums_path}', 'delta')
+            spark, f'{silver_path}/{fact_albums_path}', 'delta').cache()
         df_bridge = read_data(
-            spark, f'{silver_path}/{bridge_table_path}', 'delta')
+            spark, f'{silver_path}/{bridge_table_path}', 'delta').cache()
         df_artists = read_data(
-            spark, f'{silver_path}/{dim_artists_path}', 'delta')
+            spark, f'{silver_path}/{dim_artists_path}', 'delta').cache()
+
+        # checking size of the dim tables before broadcasting
+        counts = {
+            'albums': df_albums.count(),
+            'bridge': df_bridge.count(),
+            'artists': df_artists.count()
+        }
+
+        logger.info(f"Table sizes: {counts}")
+
+        broadcast_strategy = {
+            'bridge': counts['bridge'] < SAFE_BROADCAST_ROWS,
+            'artists': counts['artists'] < SAFE_BROADCAST_ROWS}
+
+        logger.info(f"Broadcast strategy: {broadcast_strategy}")
+
+        # conditional broadcasting
+        df_bridge_join = F.broadcast(
+            df_bridge) if broadcast_strategy['bridge'] else df_bridge
+        df_artists_join = F.broadcast(
+            df_artists) if broadcast_strategy['artists'] else df_artists
 
         # creating a base dataset with all artist-album relationships
-        df_base = df_albums.alias('b').join(
-            F.broadcast(df_bridge).alias('a'),
-            F.col('b.album_id') == F.col('a.album_id'),
-            'inner'
-        ).join(
-            F.broadcast(df_artists).alias('ar'),
-            F.col('b.artist_id') == F.col('ar.artist_id'),
-            'inner'
-        )
+        df_base = df_albums.alias('a').join(
+            df_bridge_join.alias('br'),
+            F.col('a.album_id') == F.col('br.album_id'),
+            'inner').join(
+            df_artists_join.alias('ar'),
+            F.col('br.artist_id') == F.col('ar.artist_id'),
+            'inner')
 
         # creating aggregated metrics per artist
         df_summary = df_base.groupBy(
@@ -135,3 +155,7 @@ def create_artist_album_summary(
     except Exception as e:
         logger.exception("Failed to create artist album summary")
         raise
+    finally:
+        df_albums.unpersist()
+        df_bridge.unpersist()
+        df_artists.unpersist()
