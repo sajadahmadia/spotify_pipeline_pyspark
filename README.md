@@ -123,6 +123,7 @@ make gold    # Aggregations
 - **Incremental Processing**: Only processes new/changed records
 - **Schema Evolution**: Handles new fields without pipeline modifications
 - **Data Validation**: 4 quality checks ensuring data integrity
+- **Data Profiling**: Profiling critical fields of the fact-dimension modeling tables
 - **Retry Logic**: Exponential backoff with 5 retry attempts
 
 ## 🛠️ Core Components
